@@ -30,7 +30,7 @@ class CultbeautySpider(CrawlSpider):
         # file_.write(response.body)
         # file_.close()
         for mobile_item in mobile_items:
-            image = "http:" + mobile_item.xpath('.//img/@src').extract_first()
+            image_url = "http:" + mobile_item.xpath('.//img/@src').extract_first()
             name = mobile_item.xpath('.//h3/text()').extract_first()
             brand = mobile_item.xpath(
                 './/div[contains(@class, "productGridBrandTitle")]/span/text()').extract_first()
@@ -43,7 +43,7 @@ class CultbeautySpider(CrawlSpider):
             item = ProductItem(
                 name=name.strip(),
                 price=price.strip(),
-                image=image,
+                image_url=image_url,
                 brand=brand.strip(),
                 affiliate_link=affiliate_link,
                 category=category,

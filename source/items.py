@@ -11,9 +11,10 @@ import scrapy
 class ProductItem(scrapy.Item):
     # name, brand name, image, price and category
     name = scrapy.Field()
-    brand = scrapy.Field()
-    image = scrapy.Field()
     price = scrapy.Field()
     category = scrapy.Field()
     affiliate_link = scrapy.Field()
     website = scrapy.Field()
+    brand = scrapy.Field()
+    images = scrapy.Field()
+    image_urls = scrapy.Field()
