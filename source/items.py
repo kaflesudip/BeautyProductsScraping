@@ -13,6 +13,7 @@ class ProductItem(scrapy.Item):
     name = scrapy.Field()
     price = scrapy.Field()
     category = scrapy.Field()
+    sub_category = scrapy.Field()
     affiliate_link = scrapy.Field()
     website = scrapy.Field()
     brand = scrapy.Field()
