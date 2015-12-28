@@ -1,10 +1,10 @@
 * beautybay.com
-* maccosmetics.com
-* cultbeauty.co.uk
-* sephora.com
-* maybelline.co.uk
-* selfridges.com
+* maccosmetics.com -
+* cultbeauty.co.uk - done
+* sephora.com - done
+* maybelline.co.uk - problem
+* selfridges.com - done
 * Polyvore.com
 * net-a-porter.com
 * shopstyle.co.uk
-* beautylish.com
+* beautylish.com - done

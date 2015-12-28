@@ -1,22 +1,40 @@
-from selenium import webdriver
 from scrapy.spider import BaseSpider
 # from scrapy.http import Request
-import time
-import lxml.html
 
 class SeleniumSprider(BaseSpider):
     name = "sample"
-    allowed_domains = ['beautybay']
-    start_urls = ["http://www.beautybay.com/cosmetics/_/N-23Z1xZ1wZ1vZ1uZ1tZo/"]
-
-    def __init__(self, **kwargs):
-        print kwargs
-        self.driver = webdriver.PhantomJS()
+    # allowed_domains = ['beautybay']
+    start_urls = [
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        "http://jobsearch.monster.co.uk/jobs/?q=python&where=london&cy=uk",
+        ]
 
     def parse(self, response):
         print ("--------------")
-        new_response = self.driver.get(response.url)
-        print(new_response)
+        print(response)
         # sel.open("/index.aspx")
         # sel.click("id=radioButton1")
         # sel.select("genderOpt", "value=male")
