@@ -58,29 +58,29 @@ class BeautyLishSpider(CrawlSpider):
         # print "response", response.url, 'endresponse'
         sel = Selector(response)
         all_links = []
-        if response.url == "http://www.beautylish.com/shop/browse?category=eye-makeup&ref=menu":
-            extract_category = sel.xpath('//span[@class="filter_child_horizontal"]/descendant::text()').extract()[0]
-            category = extract_category.split(':')[1].strip().replace('\n','').replace('\t','')
-            data = sel.xpath('//div[contains(@class, "mb0")]/ul/li')
-            for each in data:
-                sub_category = each.xpath('.//a/text()').extract()
-            links = data.xpath('./a/@href')
-            for link in links:
-                if link.extract() == '/':
-                    print("contineued")
-                    continue
-                import urlparse
-                full_url = urlparse.urljoin(response.url, link.extract())
-                my_request = scrapy.Request(
-                    full_url,
-                    self.parse_items)
-                my_request.meta['category'] = {
-                    "sub_category": sub_category,
-                    "category": category,
-                    # "to_replace": "currentPage=1"
-                }
+        # if response.url == "http://www.beautylish.com/shop/browse?category=eye-makeup&ref=menu":
+        extract_category = sel.xpath('//span[@class="filter_child_horizontal"]/descendant::text()').extract()[0]
+        category = extract_category.split(':')[1].strip().replace('\n','').replace('\t','')
+        data = sel.xpath('//div[contains(@class, "mb0")]/ul/li')
+        for each in data:
+            sub_category = each.xpath('.//a/text()').extract()
+        links = data.xpath('./a/@href')
+        for link in links:
+            if link.extract() == '/':
+                print("contineued")
+                continue
+            import urlparse
+            full_url = urlparse.urljoin(response.url, link.extract())
+            my_request = scrapy.Request(
+                full_url,
+                self.parse_items)
+            my_request.meta['category'] = {
+                "sub_category": sub_category,
+                "category": category,
+                # "to_replace": "currentPage=1"
+            }
 
-                all_links.append(my_request)
+            all_links.append(my_request)
 
         return all_links
 
