@@ -14,13 +14,13 @@ class SephoraSpider(CrawlSpider):
     allowed_domains = ["sephora.com"]
     start_urls = [
         'http://www.sephora.com/makeup-cosmetics',
-        # 'http://www.sephora.com/skincare',
-        # 'http://www.sephora.com/fragrance',
-        # 'http://www.sephora.com/bath-body',
-        # 'http://www.sephora.com/nails-makeup',
-        # 'http://www.sephora.com/hair-products',
-        # 'http://www.sephora.com/makeup-tools',
-        # 'http://www.sephora.com/men',
+        'http://www.sephora.com/skincare',
+        'http://www.sephora.com/fragrance',
+        'http://www.sephora.com/bath-body',
+        'http://www.sephora.com/nails-makeup',
+        'http://www.sephora.com/hair-products',
+        'http://www.sephora.com/makeup-tools',
+        'http://www.sephora.com/men',
     ]
 
     rules = (

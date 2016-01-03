@@ -14,11 +14,11 @@ class BeautyLishSpider(CrawlSpider):
     allowed_domains = ["www.beautylish.com"]
     start_urls = [
         'http://www.beautylish.com',
-        # 'https://www.beautylish.co.uk/make-up.html?ref=mm',
-        # 'https://www.beautylish.co.uk/fragrance.html?ref=mm',
-        # 'https://www.beautylish.co.uk/hair-care.html?ref=mm',
-        # 'https://www.beautylish.co.uk/bath-body.html?ref=mm',
-        # 'https://www.beautylish.co.uk/wellbeing.html?ref=mm',
+        'https://www.beautylish.co.uk/make-up.html?ref=mm',
+        'https://www.beautylish.co.uk/fragrance.html?ref=mm',
+        'https://www.beautylish.co.uk/hair-care.html?ref=mm',
+        'https://www.beautylish.co.uk/bath-body.html?ref=mm',
+        'https://www.beautylish.co.uk/wellbeing.html?ref=mm',
     ]
 
     rules = [

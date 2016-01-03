@@ -36,16 +36,19 @@ class MaybellineSpider(CrawlSpider):
     def parse_start_url(self, response):
         print("entered")
         categories = response.xpath(
-            '//ul[@class="category-subnav-links filters"]/li/h2/a/')
+            '//ul[@class="category-subnav-links filters"]//li//a')
         all_links = []
+        category = response.xpath(
+            '//h1[@class="title"]/text()'
+        ).extract_first().replace("Makeup", "").strip()
         for each_category in categories:
-            full_url = urlparse.urljoin(response.url, each_category.xpath("./@href").extract())
+            full_url = urlparse.urljoin(response.url, each_category.xpath("./@href").extract_first())
             my_request = scrapy.Request(
                 full_url,
                 self.parse_items)
             my_request.meta['category'] = {
-                "sub_category": each_category.xpath("./text()").extract(),
-                "category": response.xpath('//h1[@class="title"]').extract()
+                "sub_category": each_category.xpath("./text()").extract_first(),
+                "category": category
             }
             print ("meta", my_request.meta)
             all_links.append(my_request)
@@ -53,29 +56,30 @@ class MaybellineSpider(CrawlSpider):
         return all_links
 
     def parse_items(self, response):
-        # price not found on hold
-        # item = ProductItem(
-        #     name=name.strip(),
-        #     price=price.strip(),
-        #     image_urls=image_urls,
-        #     brand=brand.strip(),
-        #     affiliate_link=affiliate_link,
-        #     category=category,
-        #     sub_category=sub_category,
-        #     website=website
-        # )
-        # yield item
-
-        to_replace = response.meta['to_replace']
-        next_number = int(to_replace.replace("currentPage=", "")) + 1
-        next_link = response.url.replace(
-            to_replace, "currentPage=" + str(next_number))
-        my_request = scrapy.Request(
-            next_link,
-            self.parse_items)
-        my_request.meta['category'] = {
-            "sub_category": sub_category,
-            "category": category,
-            "to_replace": "currentPage=" + str(next_number)
-        }
-        yield my_request
+        print("---------------------------------------------")
+        category = response.meta['category']['category']
+        sub_category = response.meta['category']['sub_category']
+        print(category, sub_category)
+        print("--------------------------------")
+        products = response.xpath('//li[@class="product"]')
+        for each_item in products:
+            name = each_item.xpath(".//h3/a/text()").extract_first()
+            price = ""
+            brand = "maybelline"
+            affiliate_link = each_item.xpath(".//h3/a/@href").extract_first()
+            sub_category = sub_category
+            category = category
+            website = "maybelline.com"
+            image_urls = [
+                urlparse.urljoin(response.url, response.xpath(".//img/@src").extract_first())]
+            item = ProductItem(
+                name=name.strip(),
+                price=price.strip(),
+                image_urls=image_urls,
+                brand=brand.strip(),
+                affiliate_link=affiliate_link,
+                category=category,
+                sub_category=sub_category,
+                website=website
+            )
+            yield item
