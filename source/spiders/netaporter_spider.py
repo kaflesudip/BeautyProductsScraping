@@ -49,6 +49,8 @@ makeup_categories = {
 class NetaporterSpider(CrawlSpider):
     name = "netaporter"
     allowed_domains = ["net-a-porter.com"]
+    custom_settings = {"IMAGES_STORE": '../images/netaporter'}
+
     start_urls = [
         'http://www.net-a-porter.com/np/en/d/shop/Beauty/Bath_and_Body',
         'http://www.net-a-porter.com/np/en/d/shop/Beauty/Beauty_Sets?',

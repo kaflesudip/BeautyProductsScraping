@@ -11,6 +11,8 @@ import urlparse
 
 class SephoraSpider(CrawlSpider):
     name = "sephora"
+    custom_settings = {"IMAGES_STORE": '../images/sephora'}
+
     allowed_domains = ["sephora.com"]
     start_urls = [
         'http://www.sephora.com/makeup-cosmetics',

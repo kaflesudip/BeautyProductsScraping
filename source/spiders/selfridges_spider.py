@@ -8,6 +8,8 @@ import urlparse
 
 class SelfridgesSpider(CrawlSpider):
     name = "selfridges"
+    custom_settings = {"IMAGES_STORE": '../images/selfridges'}
+
     allowed_domains = ["selfridges.com"]
     start_urls = [
         'http://www.selfridges.com/GB/en/cat/beauty/make-up/eyes/?llc=sn',
@@ -69,14 +71,15 @@ class SelfridgesSpider(CrawlSpider):
         category = response.meta['category']['category']
         sub_category = response.meta['category']['sub_category']
         for each_item in all_items:
-            brand = each_item.xpath('//a[@class="title"]/text()').extract_first().strip()
-            name = each_item.xpath('//a[@class="description"]/text()').extract_first().strip()
-            price = each_item.xpath('//p[@class="price"]/text()').extract_first().strip()
+            brand = each_item.xpath('.//a[@class="title"]/text()').extract_first().strip()
+            name = each_item.xpath('.//a[@class="description"]/text()').extract_first().strip()
+            price = each_item.xpath('.//p[@class="price"]/text()').extract_first() or\
+                each_item.xpath('.//span[@class="now"]').extract_first().strip()
             affiliate_link = each_item.xpath('./a/@href').extract_first().split()
             website = "selfridges.com"
             image_urls = [
                 each_item.xpath(
-                    '//div[@class="productContainer"]//img/@data-mainsrc'
+                    './/img/@data-mainsrc'
                 ).extract_first().strip()
             ]
             # price not found on hold

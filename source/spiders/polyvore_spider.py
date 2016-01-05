@@ -60,6 +60,8 @@ url_to_use = 'http://www.polyvore.com/cgi/shop?.in=json&.out=jsonx&request=%7B%2
 class PolyvoreSpider(CrawlSpider):
     name = "polyvore"
     allowed_domains = ["polyvore.com"]
+    custom_settings = {"IMAGES_STORE": '../images/polyvore'}
+
     start_urls = [
         'http://www.polyvore.com/'
     ]

@@ -9,8 +9,10 @@ from scrapy.selector import Selector
 from source.items import ProductItem
 
 
-class BeautyLishSpider(CrawlSpider):
-    name = "MacSpider"
+class MacSpider(CrawlSpider):
+    name = "Macspider"
+    custom_settings = {"IMAGES_STORE": '../images/mac'}
+
     allowed_domains = ["www.maccosmetics.com"]
     start_urls = [
         'http://www.maccosmetics.com',

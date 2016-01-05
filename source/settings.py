@@ -111,3 +111,6 @@ DOWNLOADER_MIDDLEWARES = {
 SPLASH_URL = 'http://localhost:8050/'
 ITEM_PIPELINES = {'scrapy.contrib.pipeline.images.ImagesPipeline': 1}
 IMAGES_STORE = '../images'
+
+FEED_FORMAT = 'json'
+FEED_URI = '../output.json'

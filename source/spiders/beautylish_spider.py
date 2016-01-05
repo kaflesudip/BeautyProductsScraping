@@ -10,15 +10,16 @@ from source.items import ProductItem
 
 
 class BeautyLishSpider(CrawlSpider):
-    name = "BeautyLish"
-    allowed_domains = ["www.beautylish.com"]
+    name = "beautylish"
+    custom_settings = {"IMAGES_STORE": '../images/beautylish'}
+    # allowed_domains = ["www.beautylish.com"]
     start_urls = [
         'http://www.beautylish.com',
-        'https://www.beautylish.co.uk/make-up.html?ref=mm',
-        'https://www.beautylish.co.uk/fragrance.html?ref=mm',
-        'https://www.beautylish.co.uk/hair-care.html?ref=mm',
-        'https://www.beautylish.co.uk/bath-body.html?ref=mm',
-        'https://www.beautylish.co.uk/wellbeing.html?ref=mm',
+        # 'https://www.beautylish.com/make-up.html?ref=mm',
+        # 'https://www.beautylish.com/fragrance.html?ref=mm',
+        # 'https://www.beautylish.com/hair-care.html?ref=mm',
+        # 'https://www.beautylish.com/bath-body.html?ref=mm',
+        # 'https://www.beautylish.com/wellbeing.html?ref=mm',
     ]
 
     rules = [
@@ -119,7 +120,7 @@ class BeautyLishSpider(CrawlSpider):
                 sub_category=response.meta['category']['sub_category'][0],
                 website=website
             )
-            print item
+            yield item
 
         next_page = response.xpath("//div[@class='pager']/a/@href")
         print "next page", next_page

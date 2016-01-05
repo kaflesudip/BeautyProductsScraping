@@ -8,6 +8,8 @@ from source.items import ProductItem
 
 class CultbeautySpider(CrawlSpider):
     name = "cultbeauty"
+    custom_settings = {"IMAGES_STORE": '../images/cultbeauty'}
+
     allowed_domains = ["www.cultbeauty.co.uk"]
     start_urls = [
         'https://www.cultbeauty.co.uk/skin-care.html?ref=mm',

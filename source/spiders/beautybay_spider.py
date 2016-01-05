@@ -150,9 +150,17 @@ google_cache_link = "http://webcache.googleusercontent.com/search?q=cache%3A{0}&
 
 class BeautybaySpider(CrawlSpider):
     name = "beautybay"
+    custom_settings = {
+        "IMAGES_STORE": '../images/beautybay',
+        "DOWNLOAD_DELAY": 5,
+        "CONCURRENT_REQUESTS_PER_DOMAIN": 1,
+        "RANDOMIZE_DOWNLOAD_DELAY": True,
+        "COOKIES_ENABLED": True
+    }
+
     # allowed_domains = ["maybelline.co.uk"]
     start_urls = [
-        'http://google.com'
+        'http://facebook.com'
     ]
 
     def parse_start_url(self, response):
@@ -178,12 +186,13 @@ class BeautybaySpider(CrawlSpider):
         sub_category = response.meta['category']['sub_category']
         print(category, sub_category)
         print("--------------------------------")
-        products = response.xpath('//div[contains(@class, "product")]')
+        products = response.xpath('//div[contains(@class, "product needsclick")]')
         for each_item in products:
             name = each_item.xpath('.//p[@class="description"]/text()').extract_first()
+            print(name)
             brand = each_item.xpath('.//p[@class="brand"]/text()').extract_first()
-            price = each_item.xpath('.//p[@class="price"]/text()').extract_first()
-            affiliate_link = each_item.xpath('./a/@href').extract_first()
+            price = each_item.xpath('.//p[@class="pricing"]/text()').extract_first()
+            affiliate_link = "http://beautybay.com" + each_item.xpath('./a/@href').extract_first()
             website = "beautybay.com"
             image_urls = [
                 "http:" + response.xpath(".//img/@data-src").extract_first()]

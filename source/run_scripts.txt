@@ -1,0 +1,10 @@
+scrapy crawl beautybay -o beautybay.json &&
+scrapy crawl beautylish -o beautylish.json &&
+scrapy crawl cultbeauty -o cultbeauty.json &&
+scrapy crawl Macspider -o Macspider.json &&
+scrapy crawl maybelline -o maybelline.json &&
+scrapy crawl netaporter -o netaporter.json &&
+scrapy crawl polyvore -o polyvore.json &&
+scrapy crawl selfridges -o selfridges.json &&
+scrapy crawl sephora -o sephora.json &&
+scrapy crawl shopstyle -o shopstyle.json

@@ -12,8 +12,10 @@ import json
 from source.items import ProductItem
 
 
-class BeautyLishSpider(CrawlSpider):
-    name = "ShopStyle"
+class ShopStyleSpider(CrawlSpider):
+    name = "shopstyle"
+    custom_settings = {"IMAGES_STORE": '../images/shopstyle'}
+
     allowed_domains = ["www.shopstyle.co.uk"]
     start_urls = [
         # 'http://www.shopstyle.co.uk',

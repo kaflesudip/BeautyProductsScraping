@@ -10,6 +10,7 @@ import urlparse
 class MaybellineSpider(CrawlSpider):
     name = "maybelline"
     allowed_domains = ["maybelline.co.uk"]
+    custom_settings = {"IMAGES_STORE": '../images/maybelline'}
     start_urls = [
         'http://www.maybelline.co.uk/makeup/eye.aspx?origin=Footer-CategoryLink',
         'http://www.maybelline.co.uk/makeup/face.aspx?origin=Footer-CategoryLink',
@@ -66,12 +67,14 @@ class MaybellineSpider(CrawlSpider):
             name = each_item.xpath(".//h3/a/text()").extract_first()
             price = ""
             brand = "maybelline"
-            affiliate_link = each_item.xpath(".//h3/a/@href").extract_first()
+            affiliate_link = urlparse.urljoin(
+                response.url,
+                each_item.xpath(".//h3/a/@href").extract_first())
             sub_category = sub_category
             category = category
             website = "maybelline.com"
             image_urls = [
-                urlparse.urljoin(response.url, response.xpath(".//img/@src").extract_first())]
+                urlparse.urljoin(response.url, each_item.xpath(".//img/@src").extract_first())]
             item = ProductItem(
                 name=name.strip(),
                 price=price.strip(),
