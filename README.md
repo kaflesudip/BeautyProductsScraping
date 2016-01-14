@@ -16,6 +16,11 @@ Scrape 10 sites as listed by the client.
 `scrapy crawl sephora -o sephora.json`
 
 
+### View Sample Data ###
+
+1. Sample Data for this can be found on [all_scraped_data](./all_scraped_data) folders.
+
+
 ### List of sites to crawl ###
 
 * maccosmetics.com
@@ -28,11 +33,6 @@ Scrape 10 sites as listed by the client.
 * net-a-porter.com
 * shopstyle.co.uk
 * beautylish.com
-
-
-### View Sample Data ###
-
-	1. Sample Data for this can be found on all_scraped_data folders.
 
 
 ### Libraries used:
