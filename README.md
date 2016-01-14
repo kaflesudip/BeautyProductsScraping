@@ -32,7 +32,7 @@ Scrape 10 sites as listed by the client.
 
 ### View Sample Data ###
 
-	1. Sample Data for this can be found on [Data Files](./all_scraped_data/)
+	1. Sample Data for this can be found on all_scraped_data folders.
 
 
 ### Libraries used:
