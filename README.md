@@ -3,8 +3,6 @@
 
 ### Scraping top 10 beauty e-commerce sites. ###
 
-Scrape 10 sites as listed by the client.
-
 
 ### How do I get set up? ###
 
