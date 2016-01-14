@@ -7,75 +7,75 @@ import urllib
 
 
 URLS_TO_CRAWL = {
-    "Eyes": {
-        "Eye Liner": "http://beautybay.com/cosmetics/Eye-Liner/_/N-1z140tmZo/",
-        "Eye Primers": "http://beautybay.com/cosmetics/Eye-Primers/_/N-1z13djpZo/",
-        "Eyebrow & Eyelash Treatments": "http://beautybay.com/cosmetics/Eyebrow-Eyelash-Treatments/_/N-1z00n4jZo/",
-        "Eyebrow Colour & Shaping": "http://beautybay.com/cosmetics/Eyebrow-Colour-Shaping/_/N-1z00n49Zo/",
-        "Eyeshadow": "http://beautybay.com/cosmetics/Eyeshadow/_/N-1z140thZo/",
-    },
+    # "Eyes": {
+    #     "Eye Liner": "http://beautybay.com/cosmetics/Eye-Liner/_/N-1z140tmZo/",
+    #     "Eye Primers": "http://beautybay.com/cosmetics/Eye-Primers/_/N-1z13djpZo/",
+    #     "Eyebrow & Eyelash Treatments": "http://beautybay.com/cosmetics/Eyebrow-Eyelash-Treatments/_/N-1z00n4jZo/",
+    #     "Eyebrow Colour & Shaping": "http://beautybay.com/cosmetics/Eyebrow-Colour-Shaping/_/N-1z00n49Zo/",
+    #     "Eyeshadow": "http://beautybay.com/cosmetics/Eyeshadow/_/N-1z140thZo/",
+    # },
 
-    "Face": {
-        "Face Primers": "http://beautybay.com/cosmetics/Face-Primers/_/N-1z13djyZo/",
-        "False Eyelashes & Glue": "http://beautybay.com/cosmetics/False-Eyelashes-Glue/_/N-1z00mvjZo/",
-        "Finishing": "http://beautybay.com/cosmetics/Finishing/_/N-1z140tqZo/",
-        "Foundation": "http://beautybay.com/cosmetics/Foundation/_/N-1z140tiZo/",
-        "Highlighters": "http://beautybay.com/cosmetics/Highlighters/_/N-1z00n4bZo/",
-    },
+    # "Face": {
+    #     "Face Primers": "http://beautybay.com/cosmetics/Face-Primers/_/N-1z13djyZo/",
+    #     "False Eyelashes & Glue": "http://beautybay.com/cosmetics/False-Eyelashes-Glue/_/N-1z00mvjZo/",
+    #     "Finishing": "http://beautybay.com/cosmetics/Finishing/_/N-1z140tqZo/",
+    #     "Foundation": "http://beautybay.com/cosmetics/Foundation/_/N-1z140tiZo/",
+    #     "Highlighters": "http://beautybay.com/cosmetics/Highlighters/_/N-1z00n4bZo/",
+    # },
 
-    "Lips": {
-        "Lip & Cheek Tints": "http://beautybay.com/cosmetics/Lip-Cheek-Tints/_/N-1z00n47Zo/",
-        "Lip Balms": "http://beautybay.com/cosmetics/Lip-Balms/_/N-1z13djvZo/",
-        "Lip Pencils": "http://beautybay.com/cosmetics/Lip-Pencils/_/N-1z13djlZo/",
-        "Lip Plumpers": "http://beautybay.com/cosmetics/Lip-Plumpers/_/N-1z13djoZo/",
-        "Lip Primer": "http://beautybay.com/cosmetics/Lip-Primer/_/N-1z13eydZo/",
-        "Lipgloss": "http://beautybay.com/cosmetics/Lipgloss/_/N-1z140yhZo/",
-        "Lipsticks": "http://beautybay.com/cosmetics/Lipsticks/_/N-1z13djmZo/",
-    },
-    "Makeup": {
-        "Makeup Bags & Storage": "http://beautybay.com/cosmetics/Makeup-Bags-Storage/_/N-1z00kwgZo/",
-        "Makeup Brush Sets": "http://beautybay.com/cosmetics/Makeup-Brush-Sets/_/N-1z00l89Zo/",
-        "Makeup Brushes": "http://beautybay.com/cosmetics/Makeup-Brushes/_/N-1z00kwkZo/",
-        "Makeup Remover": "http://beautybay.com/cosmetics/Makeup-Remover/_/N-1z00kwmZo/",
-        "Mascara": "http://beautybay.com/cosmetics/Mascara/_/N-1z140yaZo/",
-        "Palettes": "http://beautybay.com/cosmetics/Palettes/_/N-1z13djnZo/",
-        "Powders": "http://beautybay.com/cosmetics/Powders/_/N-1z13djsZo/",
-        "Sets": "http://beautybay.com/cosmetics/Sets/_/N-1z00n64Zo/",
-        "Special Effects": "http://beautybay.com/cosmetics/Special-Effects/_/N-1z0vannZo/",
-        "Strobing": "http://beautybay.com/cosmetics/Strobing/_/N-1z00kqvZo/",
-    },
+    # "Lips": {
+    #     "Lip & Cheek Tints": "http://beautybay.com/cosmetics/Lip-Cheek-Tints/_/N-1z00n47Zo/",
+    #     "Lip Balms": "http://beautybay.com/cosmetics/Lip-Balms/_/N-1z13djvZo/",
+    #     "Lip Pencils": "http://beautybay.com/cosmetics/Lip-Pencils/_/N-1z13djlZo/",
+    #     "Lip Plumpers": "http://beautybay.com/cosmetics/Lip-Plumpers/_/N-1z13djoZo/",
+    #     "Lip Primer": "http://beautybay.com/cosmetics/Lip-Primer/_/N-1z13eydZo/",
+    #     "Lipgloss": "http://beautybay.com/cosmetics/Lipgloss/_/N-1z140yhZo/",
+    #     "Lipsticks": "http://beautybay.com/cosmetics/Lipsticks/_/N-1z13djmZo/",
+    # },
+    # "Makeup": {
+    #     "Makeup Bags & Storage": "http://beautybay.com/cosmetics/Makeup-Bags-Storage/_/N-1z00kwgZo/",
+    #     "Makeup Brush Sets": "http://beautybay.com/cosmetics/Makeup-Brush-Sets/_/N-1z00l89Zo/",
+    #     "Makeup Brushes": "http://beautybay.com/cosmetics/Makeup-Brushes/_/N-1z00kwkZo/",
+    #     "Makeup Remover": "http://beautybay.com/cosmetics/Makeup-Remover/_/N-1z00kwmZo/",
+    #     "Mascara": "http://beautybay.com/cosmetics/Mascara/_/N-1z140yaZo/",
+    #     "Palettes": "http://beautybay.com/cosmetics/Palettes/_/N-1z13djnZo/",
+    #     "Powders": "http://beautybay.com/cosmetics/Powders/_/N-1z13djsZo/",
+    #     "Sets": "http://beautybay.com/cosmetics/Sets/_/N-1z00n64Zo/",
+    #     "Special Effects": "http://beautybay.com/cosmetics/Special-Effects/_/N-1z0vannZo/",
+    #     "Strobing": "http://beautybay.com/cosmetics/Strobing/_/N-1z00kqvZo/",
+    # },
 
-    "Skin": {
-        "Sun Care": "http://beautybay.com/cosmetics/Sun-Care/_/N-1z14073Zo/",
-        "Tinted Moisturisers": "http://beautybay.com/cosmetics/Tinted-Moisturisers/_/N-1z13djiZo/",
-        "Toners": "http://beautybay.com/cosmetics/Toners/_/N-1z13dk4Zo/",
-        "Treatments": "http://beautybay.com/cosmetics/Treatments/_/N-1z13dk5Zo/",
-    },
+    # "Skin": {
+    #     "Sun Care": "http://beautybay.com/cosmetics/Sun-Care/_/N-1z14073Zo/",
+    #     "Tinted Moisturisers": "http://beautybay.com/cosmetics/Tinted-Moisturisers/_/N-1z13djiZo/",
+    #     "Toners": "http://beautybay.com/cosmetics/Toners/_/N-1z13dk4Zo/",
+    #     "Treatments": "http://beautybay.com/cosmetics/Treatments/_/N-1z13dk5Zo/",
+    # },
 
-    "Skincare": {
-        "BB & CC Creams": "http://beautybay.com/skincare/BB-CC-Creams/_/N-1z00n45Zm/",
-        "Cleansers": "http://beautybay.com/skincare/cleansers/_/N-1z13dk0Zm/",
-        "Exfoliators": "http://beautybay.com/skincare/exfoliators/_/N-1z13dk3Zm/",
-        "Eye Care": "http://beautybay.com/skincare/eye-care/_/N-1z140hlZm/",
-        "Eye Masks": "http://beautybay.com/skincare/eye-masks/_/N-1z00n4hZm/",
-        "Eyebrow & Eyelash Treatments": "http://beautybay.com/skincare/Eyebrow-Eyelash-Treatments/_/N-1z00n4jZm/",
-        "Face Masks": "http://beautybay.com/skincare/face-masks/_/N-1z00n4lZm/",
-        "Hair Removal": "http://beautybay.com/skincare/hair-removal/_/N-1z140guZm/",
-        "Lip Balms": "http://beautybay.com/skincare/Lip-Balms/_/N-1z13djvZm/",
-        "Lipgloss": "http://beautybay.com/skincare/Lipgloss/_/N-1z140yhZm/",
-        "Makeup Remover": "http://beautybay.com/skincare/Makeup-Remover/_/N-1z00kwmZm/",
-        "Moisturisers": "http://beautybay.com/skincare/moisturisers/_/N-1z13dk1Zm/",
-        "Night Creams": "http://beautybay.com/skincare/night-creams/_/N-1z13djzZm/",
-        "Self Tan": "http://beautybay.com/skincare/self-tan/_/N-1z140y8Zm/",
-        "Serum": "http://beautybay.com/skincare/serum/_/N-1z0smvmZm/",
-        "Sets": "http://beautybay.com/skincare/Sets/_/N-1z00n64Zm/",
-        "Sun Care": "http://beautybay.com/skincare/Sun-Care/_/N-1z14073Zm/",
-        "Supplements": "http://beautybay.com/skincare/supplements/_/N-1z140izZm/",
-        "Tinted Moisturisers": "http://beautybay.com/skincare/Tinted-Moisturisers/_/N-1z13djiZm/",
-        "Toners": "http://beautybay.com/skincare/Toners/_/N-1z13dk4Zm/",
-        "Treatments": "http://beautybay.com/skincare/Treatments/_/N-1z13dk5Zm/",
+    # "Skincare": {
+    #     "BB & CC Creams": "http://beautybay.com/skincare/BB-CC-Creams/_/N-1z00n45Zm/",
+    #     "Cleansers": "http://beautybay.com/skincare/cleansers/_/N-1z13dk0Zm/",
+    #     "Exfoliators": "http://beautybay.com/skincare/exfoliators/_/N-1z13dk3Zm/",
+    #     "Eye Care": "http://beautybay.com/skincare/eye-care/_/N-1z140hlZm/",
+    #     "Eye Masks": "http://beautybay.com/skincare/eye-masks/_/N-1z00n4hZm/",
+    #     "Eyebrow & Eyelash Treatments": "http://beautybay.com/skincare/Eyebrow-Eyelash-Treatments/_/N-1z00n4jZm/",
+    #     "Face Masks": "http://beautybay.com/skincare/face-masks/_/N-1z00n4lZm/",
+    #     "Hair Removal": "http://beautybay.com/skincare/hair-removal/_/N-1z140guZm/",
+    #     "Lip Balms": "http://beautybay.com/skincare/Lip-Balms/_/N-1z13djvZm/",
+    #     "Lipgloss": "http://beautybay.com/skincare/Lipgloss/_/N-1z140yhZm/",
+    #     "Makeup Remover": "http://beautybay.com/skincare/Makeup-Remover/_/N-1z00kwmZm/",
+    #     "Moisturisers": "http://beautybay.com/skincare/moisturisers/_/N-1z13dk1Zm/",
+    #     "Night Creams": "http://beautybay.com/skincare/night-creams/_/N-1z13djzZm/",
+    #     "Self Tan": "http://beautybay.com/skincare/self-tan/_/N-1z140y8Zm/",
+    #     "Serum": "http://beautybay.com/skincare/serum/_/N-1z0smvmZm/",
+    #     "Sets": "http://beautybay.com/skincare/Sets/_/N-1z00n64Zm/",
+    #     "Sun Care": "http://beautybay.com/skincare/Sun-Care/_/N-1z14073Zm/",
+    #     "Supplements": "http://beautybay.com/skincare/supplements/_/N-1z140izZm/",
+    #     "Tinted Moisturisers": "http://beautybay.com/skincare/Tinted-Moisturisers/_/N-1z13djiZm/",
+    #     "Toners": "http://beautybay.com/skincare/Toners/_/N-1z13dk4Zm/",
+    #     "Treatments": "http://beautybay.com/skincare/Treatments/_/N-1z13dk5Zm/",
 
-    },
+    # },
 
     "Bath and Body": {
         "Bath": "http://beautybay.com/bathandbody/_/N-1z13ehzZp/",
@@ -151,7 +151,7 @@ google_cache_link = "http://webcache.googleusercontent.com/search?q=cache%3A{0}&
 class BeautybaySpider(CrawlSpider):
     name = "beautybay"
     custom_settings = {
-        "IMAGES_STORE": '../images/beautybay',
+        "IMAGES_STORE": '../images/beautybay_last',
         "DOWNLOAD_DELAY": 5,
         "CONCURRENT_REQUESTS_PER_DOMAIN": 1,
         "RANDOMIZE_DOWNLOAD_DELAY": True,
@@ -195,7 +195,7 @@ class BeautybaySpider(CrawlSpider):
             affiliate_link = "http://beautybay.com" + each_item.xpath('./a/@href').extract_first()
             website = "beautybay.com"
             image_urls = [
-                "http:" + response.xpath(".//img/@data-src").extract_first()]
+                "http:" + each_item.xpath(".//img/@data-src").extract_first()]
             item = ProductItem(
                 name=name.strip(),
                 price=price.strip(),
