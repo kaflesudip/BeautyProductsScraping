@@ -30,6 +30,11 @@ Scrape 10 sites as listed by the client.
 * beautylish.com
 
 
+### View Sample Data ###
+
+	1. Sample Data for this can be found on [Data Files](./all_scraped_data/)
+
+
 ### Libraries used:
 
 The project runs on Python 2.7.
